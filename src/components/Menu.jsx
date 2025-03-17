@@ -4,6 +4,7 @@ import LogoGess from "../../public/Logo-Gess.svg";
 import { useState } from "react";
 import { useItems } from "@/hooks/useItensMenu";
 import ItemMenu from "./ItemMenu";
+import Link from "next/link";
 
 export default function Menu() {
   const items = useItems()
@@ -13,7 +14,7 @@ export default function Menu() {
   return (
     <>
       <header className="flex justify-between items-center p-8 border-b-4 border-gray-400">
-        <Image src={LogoGess} alt="Logo Do GESS" className="w-40 mt-1" />
+        <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mt-1" />
         <button 
           className="flex flex-col gap-2 relative w-9 h-8"
           onClick={toggleMenu}
@@ -41,9 +42,9 @@ export default function Menu() {
         <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mb-10"/>
         <ul className="flex flex-col gap-10">
             {items.map((item, index) => (
-                <li key={index}>
+                <Link href={item.href || ''} key={index}>
                     <ItemMenu icone={item.icone} texto={item.texto} index={index} cor={'#FFF'}/>
-                </li>
+                </Link>
             ))}
         </ul>
       </nav>

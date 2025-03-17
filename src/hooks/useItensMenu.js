@@ -2,7 +2,7 @@ import { Swords, Briefcase, CalendarFold, Map, Trophy, Eye, UserCircle2, Library
 
 export const useItems = () => {
   const items = [
-    { icone: <Swords className="size-7" />, texto: "Desafio Mensal" },
+    { icone: <Swords className="size-7" />, texto: "Desafio Mensal", href: "/desafiomensal"},
     { icone: <Briefcase className="size-7"/>,  texto: "Projetos GESS" },
     { icone: <CalendarFold className="size-7" />, texto: "Calendário" },
     { icone: <Map className="size-7" />, texto: "Mapa SENAC" },
