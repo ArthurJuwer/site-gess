@@ -14,7 +14,9 @@ export default function Menu() {
   return (
     <>
       <header className="flex justify-between items-center p-8 border-b-4 border-gray-400">
-        <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mt-1" />
+        <Link href={'/'}>
+          <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mt-1" />
+        </Link>
         <button 
           className="flex flex-col gap-2 relative w-9 h-8"
           onClick={toggleMenu}

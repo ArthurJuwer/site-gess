@@ -46,7 +46,7 @@ export default function DesafioMensal() {
               <h2 className="font-semibold">01/04 - Easy Learning with HTML</h2>
               <ChevronDown className="size-7"/>
             </div>
-            <div className="w-full text-white flex justify-between px-4 py-3 bg-[#FA7B2B] rounded-xl">
+            <div className="w-full text-white flex justify-between px-4 py-3  bg-[#FA7B2B] rounded-xl">
               <h2 className="font-semibold">01/03 - Easy Learning with HTML</h2>
               <ChevronDown className="size-7"/>
             </div>
