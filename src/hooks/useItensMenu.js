@@ -5,7 +5,7 @@ export const useItems = () => {
     { icone: <Swords className="size-7" />, texto: "Desafio Mensal", href: "/desafiomensal"},
     { icone: <Briefcase className="size-7"/>,  texto: "Projetos GESS", href: "/projetos" },
     { icone: <CalendarFold className="size-7" />, texto: "Calendário", href: "/calendario" },
-    { icone: <Map className="size-7" />, texto: "Mapa SENAC" },
+    { icone: <Map className="size-7" />, texto: "Mapa SENAC", href: "/mapa" },
     { icone: <Trophy className="size-7" />, texto: "Interséries" },
     { icone: <Eye className="size-7" />, texto: "Transparência" },
     { icone: <UserCircle2 className="size-7" />, texto: "Profissional" },

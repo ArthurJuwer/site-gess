@@ -40,8 +40,9 @@ export default function Menu() {
       </header>
 
       <nav className={`fixed left-0 top-0 w-4/5 p-8 bg-[#FA7B2B] min-h-dvh transition-transform duration-300 z-50 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-
-        <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mb-10"/>
+        <Link href={'/'}>
+          <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mb-10" />
+        </Link>
         <ul className="flex flex-col gap-10">
             {items.map((item, index) => (
                 <Link href={item.href || ''} key={index}>
