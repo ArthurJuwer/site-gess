@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className={`${inter} antialiased`}>
+      <body className={`${inter.variable} antialiased`}>
         <Menu />
         {children}
         <Footer />

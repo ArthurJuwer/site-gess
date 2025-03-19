@@ -37,7 +37,7 @@ export default function ChatSenac() {
                 </div>
                 <div className="">
                     <h4 className='text-sm '>Escreva a descrição:</h4>
-                    <input type="text" name="" id="" className='bg-[#FCB98A] border border-black w-full rounded-lg p-2' />
+                    <input type="text" name="" id="" className='bg-[#FCB98A] border border-black w-full rounded-lg p-6' />
                 </div>
             </div>
             <div className="flex justify-end mt-1">
