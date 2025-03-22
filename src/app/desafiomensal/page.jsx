@@ -35,7 +35,7 @@ export default function DesafioMensal() {
               <Image src={Estrelas} alt="" className="size-6" />
               <Image src={Estrelas} alt="" className="size-6" />
             </div>
-            <button className="bg-[#1E1E1E] text-white rounded-full px-4 py-2 text-sm">Enviar Desafio</button>
+            <button className="bg-[#1E1E1E] text-white rounded-full px-4 py-2 text-xs">Enviar Desafio</button>
           </div>
         </main>
         <section className="px-8 w-full space-y-4">

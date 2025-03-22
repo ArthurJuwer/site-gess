@@ -34,9 +34,39 @@ export default function Transparencia() {
             </div>
         </div>
         <h1 className='text-2xl font-bold text-[#1E1E1E]'>Últimas Movimentações</h1>
-        <div className="bg-[#F5F5F5] rounded-2xl shadow-2xl w-full p-3 h-56 flex justify-center items-center">
-            <h1>Ainda não foi movimentado nada...</h1>
-        </div>
+        <div className="bg-[#E9E9E9] shadow-md rounded-2xl p-4 w-96">
+        <table className="w-full text-left border-collapse">
+            <thead>
+                <tr className="border-b text-xs border-[#D9D9D9]">
+                    <th className="p-3 pt-1 font-semibold border-r border-[#D9D9D9]">DATA</th>
+                    <th className="p-3 pt-1 font-semibold border-r border-[#D9D9D9]">DESCRIÇÃO</th>
+                    <th className="p-3 pt-1 font-semibold border-r border-[#D9D9D9]">TIPO</th>
+                    <th className="p-3 pt-1 font-semibold">VALOR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr className=" text-xs border-[#D9D9D9]"> { /* border-b */}
+                    <td className="p-3 border-r border-[#D9D9D9]">15/05/2024</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">Saldo Inicial</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">
+                        <span className="bg-green-600 text-green-900 px-3 py-1 rounded-full text-xs">Entrada</span>
+                    </td>
+                    <td className="p-2 text-green-700 font-semibold ">R$ 100,00</td>
+                </tr>
+                {/* <tr className='text-xs'>
+                    <td className="p-3 border-r border-[#D9D9D9]">21/06/2024</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">Bolsa Interséries</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">
+                        <span className="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Saída</span>
+                    </td>
+                    <td className="p-2 text-red-600 font-semibold">R$ 75,00</td>
+                </tr> */}
+            </tbody>
+        </table>
+        {/* <div className="mt-4 h-2 bg-gray-300 rounded-full overflow-hidden">
+            <div className="w-1/2 h-full bg-gray-500"></div>
+        </div> */}
+    </div>
         <button className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16'>Notas Fiscais e Recibos</button>
 
     </div>

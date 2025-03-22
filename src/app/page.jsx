@@ -8,8 +8,13 @@ export default function Home() {
   const items = useItems()
   return (
     <div className="">
-      <main>
+      <main className="relative w-full">
         <Image src={CapaGess} alt="Logo Do GESS" className="w-full"></Image>
+        <span className="px-4 py-2 bg-[rgba(250,123,43,0.75)] absolute bottom-14 left-5">
+        <p className="text-white opacity-100 font-bold text-[22px]">
+          Grêmio Estudantil <br /> Senac São Leopoldo
+        </p>
+      </span>
       </main>
       <nav className="mt-8 flex flex-col gap-6 items-center justify-center">
         <h1 className="text-2xl text-[#1E1E1E] font-semibold">Menu</h1>
