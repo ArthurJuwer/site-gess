@@ -13,7 +13,7 @@ export default function Transparencia() {
                 <Wallet className='text-[#FE4E03] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Valor em Caixa:</h4>
-                    <h2 className='text-[#FE4E03] text-2xl font-bold'>R$1.000,00</h2>
+                    <h2 className='text-[#FE4E03] text-2xl font-bold'>R$100,00</h2>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@ export default function Transparencia() {
                 <TrendingUp className='text-[#126A0D] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Total de Entradas:</h4>
-                    <h2 className='text-[#126A0D] text-2xl font-bold'>R$2.100,00</h2>
+                    <h2 className='text-[#126A0D] text-2xl font-bold'>R$100,00</h2>
                 </div>
             </div>
 
@@ -29,13 +29,13 @@ export default function Transparencia() {
                 <TrendingDown className='text-[#980B0B] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Total de Saídas:</h4>
-                    <h2 className='text-[#980B0B] text-2xl font-bold'>R$-1.100,00</h2>
+                    <h2 className='text-[#980B0B] text-2xl font-bold'>R$0,00</h2>
                 </div>
             </div>
         </div>
         <h1 className='text-2xl font-bold text-[#1E1E1E]'>Últimas Movimentações</h1>
-        <div className="bg-[#E9E9E9] shadow-md rounded-2xl p-4 w-96">
-        <table className="w-full text-left border-collapse">
+        <div className="bg-[#E9E9E9] shadow-md rounded-2xl p-4 overflow-x-auto">
+        <table className="w-full text-left border-collapse ">
             <thead>
                 <tr className="border-b text-xs border-[#D9D9D9]">
                     <th className="p-3 pt-1 font-semibold border-r border-[#D9D9D9]">DATA</th>
@@ -51,7 +51,7 @@ export default function Transparencia() {
                     <td className="p-3 border-r border-[#D9D9D9]">
                         <span className="bg-green-600 text-green-900 px-3 py-1 rounded-full text-xs">Entrada</span>
                     </td>
-                    <td className="p-2 text-green-700 font-semibold ">R$ 100,00</td>
+                    <td className="p-2 text-green-700 font-semibold text-xs">R$100,00</td>
                 </tr>
                 {/* <tr className='text-xs'>
                     <td className="p-3 border-r border-[#D9D9D9]">21/06/2024</td>

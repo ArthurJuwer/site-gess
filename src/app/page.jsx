@@ -10,7 +10,7 @@ export default function Home() {
     <div className="">
       <main className="relative w-full">
         <Image src={CapaGess} alt="Logo Do GESS" className="w-full"></Image>
-        <span className="px-4 py-2 bg-[rgba(250,123,43,0.75)] absolute bottom-14 left-5">
+        <span className="px-4 py-2 bg-[rgba(250,123,43,0.75)] absolute bottom-12 left-5">
         <p className="text-white opacity-100 font-bold text-[22px]">
           Grêmio Estudantil <br /> Senac São Leopoldo
         </p>
