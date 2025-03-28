@@ -33,9 +33,9 @@ export default function ChatSenac() {
   const displayedComments = showAll ? comments : comments.slice(0, 2)
 
   return (
-    <div className='flex flex-col gap-5 p-6'>
+    <div className='flex flex-col gap-5 p-6 xl:px-0'>
       <h1 className='text-2xl font-bold text-[#1E1E1E]'>Chat Anônimo</h1>
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 xl:gap-3">
         {/* Renderizando os CardComments com base no estado de exibição */}
         {displayedComments.map((comment, index) => (
           <CardComment
@@ -47,11 +47,10 @@ export default function ChatSenac() {
           />
         ))}
 
-        {/* Botão "Ver Mais" ou "Ver Menos" */}
         {comments.length > 2 && (
           <button
             onClick={() => setShowAll(!showAll)} // Alterna entre mostrar todos ou apenas 2
-            className='text-[#FA7B2B] font-semibold'
+            className='text-[#FA7B2B] font-semibold cursor-pointer'
           >
             {showAll ? 'Ver menos' : 'Ver mais'}
           </button>

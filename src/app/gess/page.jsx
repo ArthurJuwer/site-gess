@@ -7,12 +7,12 @@ import Image from 'next/image'
 export default function Gess() {
   return (
     <div className='flex flex-col gap-5 '>
-      <div className="flex flex-col gap-5 p-6 pb-0">
-        <div className="flex flex-col gap-2">
-            <h1 className='text-2xl font-bold text-[#1E1E1E]'>Sobre o GESS 2025</h1>
-            <p className='text-[#A5A5A5] text-sm'>Conheça a equipe do GESS que inovou o jeito que vemos o Grêmio Estudantil nas escolas através de um aplicativo e de suas iniciativas dos alunos pros alunos @senac.gess</p>
+      <div className="flex flex-col gap-5 p-6 pb-0 xl:px-0">
+        <div className="flex flex-col xl:items-center gap-2 xl:gap-3">
+            <h1 className='text-2xl font-bold text-[#1E1E1E] xl:text-center'>Sobre o GESS 2025</h1>
+            <p className='text-[#A5A5A5] text-sm xl:text-center xl:w-3/5'>Conheça a equipe do GESS que inovou o jeito que vemos o Grêmio Estudantil nas escolas através de um aplicativo e de suas iniciativas dos alunos pros alunos. @senac.gess</p>
         </div>
-        <div className="mt-5 flex flex-col items-center justify-center gap-5">
+        <div className="mt-5 grid grid-cols-1 xl:grid-cols-3 gap-5">
           <div className="flex flex-col items-center gap-4">
             <Image src={ArthurJuwer} className="border-2 border-black" alt=''/>
             <div className="flex flex-col gap-2 items-center justify-center">

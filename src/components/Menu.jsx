@@ -18,7 +18,7 @@ export default function Menu() {
           <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mt-1" />
         </Link>
         <button 
-          className={` flex-col gap-2 relative w-9 h-8 ${isOpen ? 'hidden' : 'flex'}`}
+          className={`cursor-pointer flex-col gap-2 relative w-9 h-8 ${isOpen ? 'hidden' : 'flex'}`}
           onClick={toggleMenu}
         >
           <span className="w-9 h-1 bg-[#FA7B2B] block rounded" />
@@ -35,7 +35,7 @@ export default function Menu() {
       )}
 
       <nav 
-        className={`fixed left-0 top-0 w-4/5 p-8 bg-[#FA7B2B] min-h-dvh transition-transform duration-300 z-50 overflow-y-auto
+        className={`fixed left-0 top-0 w-4/5 xl:w-2/6 p-8 bg-[#FA7B2B] min-h-dvh transition-transform duration-300 z-50 overflow-y-auto
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex justify-between items-center mb-10">
@@ -43,7 +43,7 @@ export default function Menu() {
             <Image src={LogoGess} alt="Logo Do GESS" className="w-36" />
           </Link>
           <button 
-            className="flex items-center justify-center flex-col gap-2 relative w-9 h-8"
+            className="cursor-pointer flex items-center justify-center flex-col gap-2 relative w-9 h-8"
             onClick={toggleMenu}
           >
             <span 

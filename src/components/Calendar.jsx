@@ -20,7 +20,7 @@ const Calendar = ({ markedDays = [], selectedMonth }) => {
   }
 
   return (
-    <div className="w-full max-w-md mx-auto bg-gray-200 shadow-xl">
+    <div className="w-full max-w-md xl:max-w-xl mx-auto bg-gray-200 shadow-xl">
       <div className="grid grid-cols-7 text-center font-bold text-white bg-orange-600 text-sm">
         {["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"].map((day) => (
           <div key={day} className="py-2">{day}</div>
@@ -30,7 +30,7 @@ const Calendar = ({ markedDays = [], selectedMonth }) => {
       <div className="grid grid-cols-7 text-center p-2">
         {/* Ajusta para começar no dia correto da semana */}
         {Array.from({ length: firstDay.getDay() }).map((_, i) => (
-          <div key={`empty-${i}`} className="py-3 w-10 h-10 mx-auto text-sm"></div>
+          <div key={`empty-${i}`} className="py-3 size-10 mx-auto text-sm"></div>
         ))}
 
         {days.map((day, index) => {
@@ -40,7 +40,7 @@ const Calendar = ({ markedDays = [], selectedMonth }) => {
           return (
             <div
               key={index}
-              className={`py-3 flex items-center justify-center w-9 h-9 mx-auto rounded-full
+              className={`py-3 flex items-center justify-center size-9 xl:size-12 xl:text-base mx-auto rounded-full
                 text-black text-sm
                 ${isMarked ? "bg-orange-500 text-white" : ""}
               `}

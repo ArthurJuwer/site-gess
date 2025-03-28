@@ -9,7 +9,7 @@ export default function Transparencia() {
             <p className='text-[#A5A5A5] text-sm'>Todos os valores que o GESS movimentou durante 2025</p>
         </div>
         <div className="w-full flex flex-col gap-5">
-            <div className="flex gap-5 items-center bg-[#EFEFEF] shadow-xl p-5 rounded-xl">
+            <div className="flex gap-5 xl:gap-6 items-center bg-[#EFEFEF] shadow-xl p-5 xl:p-8 rounded-xl">
                 <Wallet className='text-[#FE4E03] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Valor em Caixa:</h4>
@@ -17,7 +17,7 @@ export default function Transparencia() {
                 </div>
             </div>
 
-            <div className="flex gap-5 items-center bg-[#EFEFEF] shadow-xl p-5 rounded-xl">
+            <div className="flex gap-5 xl:gap-6 items-center bg-[#EFEFEF] shadow-xl p-5 xl:p-8 rounded-xl">
                 <TrendingUp className='text-[#126A0D] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Total de Entradas:</h4>
@@ -25,7 +25,7 @@ export default function Transparencia() {
                 </div>
             </div>
 
-            <div className="flex gap-5 items-center bg-[#EFEFEF] shadow-xl p-5 rounded-xl">
+            <div className="flex gap-5 xl:gap-6 items-center bg-[#EFEFEF] shadow-xl p-5 xl:p-8 rounded-xl">
                 <TrendingDown className='text-[#980B0B] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Total de Saídas:</h4>
@@ -67,7 +67,7 @@ export default function Transparencia() {
             <div className="w-1/2 h-full bg-gray-500"></div>
         </div> */}
     </div>
-        <button className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16'>Notas Fiscais e Recibos</button>
+        <button className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16 xl:mx-80'>Notas Fiscais e Recibos</button>
 
     </div>
   )
