@@ -18,7 +18,7 @@ export default function Home() {
       </main>
       <nav className="mt-8 flex flex-col gap-6 xl:gap-8 items-center justify-center">
         <h1 className="text-2xl xl:text-3xl text-[#1E1E1E] font-semibold">Menu</h1>
-        <ul className="flex flex-col gap-8 w-full px-20 relative xl:px-0 xl:grid xl:grid-cols-2">
+        <ul className="flex flex-col gap-8 w-full px-20 relative xl:px-0 xl:grid xl:grid-cols-2 xl:gap-12">
         {items.map((item, index) => (
             <Link href={item.href || ''} key={index}>
               <ItemMenu icone={item.icone} texto={item.texto} index={index} cor={'#FA7B2B'}/>
