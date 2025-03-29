@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -13,62 +13,73 @@ const customIcon = new L.Icon({
   popupAnchor: [0, -32],
 });
 
-const Map = () => {
+const senacLatLang = [-29.79656611894146, -51.1528760574173];
+
+const Map = ({ latlang }) => {
+  const [map, setMap] = useState(null);
+
   useEffect(() => {
-    const map = L.map("map", {
-      zoomControl: false, // Remove o controle de zoom
-    }).setView([-29.79656611894146, -51.1528760574173], 13);
+    const mapInstance = L.map("map", { zoomControl: false }).setView(senacLatLang, 15);
+    setMap(mapInstance);
 
-    // Camada do OpenStreetMap
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(map);
+    // Adiciona a camada do OpenStreetMap
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(mapInstance);
 
-    // 👉 Ponto A (Origem)
-    const pointA = [-29.79656611894146, -51.1528760574173];
-    L.marker(pointA, { icon: customIcon })
+    // Adiciona apenas o ponto de origem (Senac)
+    L.marker(senacLatLang, { icon: customIcon })
+      .addTo(mapInstance)
+      .bindTooltip("Senac São Leopoldo", { permanent: true, direction: "bottom" });
+
+    return () => mapInstance.remove(); // Remove o mapa ao desmontar o componente
+  }, []);
+
+  useEffect(() => {
+    if (!map) return; // Aguarda até o mapa estar inicializado
+
+    // Remove camadas anteriores para evitar duplicação
+    map.eachLayer((layer) => {
+      if (layer instanceof L.Marker || layer instanceof L.Polyline) {
+        map.removeLayer(layer);
+      }
+    });
+
+    // Mantém sempre o ponto de origem (Senac)
+    L.marker(senacLatLang, { icon: customIcon })
       .addTo(map)
-      .bindTooltip("Senac São Leopoldo", { permanent: true, direction: "top" });
+      .bindTooltip("Senac São Leopoldo", { permanent: true, direction: "bottom" });
 
-    // 👉 Ponto B (Destino)
-    const pointB = [-29.79762567197966, -51.15178068173709];
-    L.marker(pointB, { icon: customIcon })
+    if (!latlang || latlang.length !== 2) return; // Se não houver destino, não adiciona rota
+
+    // Adiciona marcador de destino
+    L.marker(latlang, { icon: customIcon })
       .addTo(map)
-      .bindTooltip("Opus Academia", { permanent: true, direction: "top" });
+      .bindTooltip("Destino", { permanent: true, direction: "bottom" });
 
-    // **Rota automática** (azul fraco) entre os pontos
+    // Adiciona rota automática
     L.Routing.control({
-      waypoints: [
-        L.latLng(pointA), // Ponto A
-        L.latLng(pointB), // Ponto B
-      ],
+      waypoints: [L.latLng(senacLatLang), L.latLng(latlang)],
       routeWhileDragging: false,
-      createMarker: () => null, // Remove os marcadores automáticos da rota
-      lineOptions: {
-        styles: [{ color: "#ADD8E6", weight: 4 }], // Azul fraco
-      },
-      show: false, // Oculta o painel de controle de rota
+      createMarker: () => null,
+      lineOptions: { styles: [{ color: "#ADD8E6", weight: 4 }] },
+      show: false,
       router: L.Routing.osrmv1({
-        serviceUrl: "https://router.project-osrm.org/route/v1", // Serviço para calcular rotas
-        profile: "foot", // Definindo a rota como a pé
+        serviceUrl: "https://router.project-osrm.org/route/v1",
+        profile: "foot",
       }),
     }).addTo(map);
 
-    // **Linha reta** (vermelha) entre os pontos A e B
-    L.polyline([pointA, pointB], {
-      color: "red",   // Cor da linha
-      weight: 4,      // Espessura da linha
-      opacity: 0.7,   // Opacidade
+    // Adiciona linha reta vermelha
+    L.polyline([senacLatLang, latlang], {
+      color: "red",
+      weight: 4,
+      opacity: 0.7,
     }).addTo(map);
 
-    // Ajusta o mapa para garantir que ambos os pontos A e B estejam visíveis
-    const lineBounds = [pointA, pointB];
-    map.fitBounds(lineBounds);
+    // Ajusta o mapa para mostrar ambos os pontos
+    map.fitBounds([senacLatLang, latlang]);
+  }, [map, latlang]);
 
-    return () => {
-      map.remove(); // Remove o mapa ao desmontar o componente
-    };
-  }, []);
-
-  return <div id="map" style={{ height: "400px", width: "100%" }}></div>;
+  return <div id="map" className="z-0" style={{ height: "400px", width: "100%" }}></div>;
 };
 
 export default Map;

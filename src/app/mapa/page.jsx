@@ -1,46 +1,43 @@
 'use client'
+import ButtonMap from '@/components/ButtonMap';
 import Map from '@/components/Map'
+import ModalMap from '@/components/ModalMap';
 import { BusFront, Container, Cross, Landmark, Paperclip, Utensils } from 'lucide-react'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Mapa() {
+    const buttons = [
+        { icon: Utensils, label: "Restaurantes", category: "restaurante" },
+        { icon: Cross, label: "Farmácias", category: "farmacia" },
+        { icon: Paperclip, label: "Impressoras", category: "impressoras" },
+        { icon: BusFront, label: "Circulares", category: "circulares" },
+        { icon: Landmark, label: "Bancos", category: "bancos" },
+        { icon: Container, label: "Correios", category: "correios" }
+        ];
+        const [modalOpen, setModalOpen] = useState(false);
+        const [latlang, setLatLang] = useState(false);
+        const [selectedLabel, setSelectedLabel] = useState("")
+        const [category, setCategory] = useState("")
+        const handleButtonClick = (label) => {
+            setSelectedLabel(label);
+            setModalOpen(true);
+          };
   return (
     <div className='flex flex-col gap-5 p-6'>
         <h1 className='text-2xl font-bold text-[#1E1E1E]'>Mapa da Unisinos</h1>
-        <p>Ainda não disponivel...</p>
-        <Map />
+        <Map latlang={latlang} />
 
         <h1 className='text-2xl font-bold text-[#1E1E1E]'>Selecione item desejado:</h1>
         <div className="grid grid-cols-2 w-full gap-6">
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <Utensils className='size-12'/>
-                <h2>Restaurantes</h2>
-            </div>
-            
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <Cross className='size-12'/>
-                <h2>Farmácias</h2>
-            </div>
-            
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <Paperclip className='size-12'/>
-                <h2>Impressoras</h2>
-            </div>
-            
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <BusFront className='size-12'/>
-                <h2>Circulares</h2>
-            </div>
-            
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <Landmark className='size-12'/>
-                <h2>Bancos</h2>
-            </div>
-            
-            <div className="flex rounded-3xl items-center justify-center p-8 w-full flex-col gap-5 bg-[#FA7B2B] text-white">
-                <Container className='size-12'/>
-                <h2>Correios</h2>
-            </div>
+        {buttons.map((btn, index) => (
+          <ButtonMap key={index} icon={btn.icon} label={btn.label} onClick={() => {
+            handleButtonClick(btn.label);
+            setCategory(btn.category)
+        }
+          }  />
+        ))}
+        <ModalMap isOpen={modalOpen} onClose={() => setModalOpen(false)} label={selectedLabel} category={category} onSelectLocation={setLatLang} />
+
         </div>
     </div>
   )
