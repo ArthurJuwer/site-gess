@@ -1,9 +1,64 @@
 import React from 'react'
-import ArthurJuwer from "../../../public/ArthurJuwer.svg"
-import ClaraMiranda from "../../../public/ClaraMiranda.svg"
-import AnaBeatriz from "../../../public/AnaBeatriz.svg"
+import ArthurJuwer from "../../../public/equipe/ArthurJuwer.svg";
+import ClaraMiranda from "../../../public/equipe/ClaraMiranda.svg";
+import AnaBeatriz from "../../../public/equipe/AnaBeatriz.svg";
+import LuizaFedeski from "../../../public/equipe/LuizaFedeski.svg"
+import LiviaMichels from "../../../public/equipe/LiviaMichels.svg"
+import IsadoraDaSilva from "../../../public/equipe/IsadoraDaSilva.svg"
+import EllenVieira from "../../../public/equipe/EllenVieira.svg"
+import ArthurMachado from "../../../public/equipe/ArthurMachado.svg"
+import RaulPontes from "../../../public/equipe/RaulPontes.svg"
+import CardTeam from '@/components/CardTeam';
 
-import Image from 'next/image'
+const membros = [
+  {
+    nome: "Arthur Juwer Rambo",
+    cargo: "Presidente",
+    imagem: ArthurJuwer,
+  },
+  {
+    nome: "Clara Miranda Vieira",
+    cargo: "Vice-Presidente",
+    imagem: ClaraMiranda,
+  },
+  {
+    nome: "Ana Beatriz Barreiro",
+    cargo: "Tesoureira",
+    imagem: AnaBeatriz,
+  },
+  {
+    nome: "Luiza Eduarda Fedeski",
+    cargo: "Secretária",
+    imagem: LuizaFedeski,
+  },
+  {
+    nome: "Lívia Michels",
+    cargo: "Diretora Cultural",
+    imagem: LiviaMichels,
+  },
+  {
+    nome: "Isadora da Silva",
+    cargo: "Diretora Social",
+    imagem: IsadoraDaSilva,
+  },
+  {
+    nome: "Éllen Vieira",
+    cargo: "Diretora de Imprensa",
+    imagem: EllenVieira,
+  },
+  {
+    nome: "Arthur Machado Pereira",
+    cargo: "Diretor de Esportes",
+    imagem: ArthurMachado,
+  },
+  {
+    nome: "Raul Pontes",
+    cargo: "Diretor da Saúde",
+    imagem: RaulPontes,
+  },
+];
+
+
 export default function Gess() {
   return (
     <div className='flex flex-col gap-5 '>
@@ -13,29 +68,9 @@ export default function Gess() {
             <p className='text-[#A5A5A5] text-sm xl:text-center xl:w-3/5'>Conheça a equipe do GESS que inovou o jeito que vemos o Grêmio Estudantil nas escolas através de um aplicativo e de suas iniciativas dos alunos pros alunos. @senac.gess</p>
         </div>
         <div className="mt-5 grid grid-cols-1 xl:grid-cols-3 gap-5">
-          <div className="flex flex-col items-center gap-4">
-            <Image src={ArthurJuwer} className="border-2 border-black" alt=''/>
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <h1 className='bg-[#FF6900] text-[#1E1E1E] p-1 px-4 rounded text-center text-xl font-semibold'>Arthur Juwer Rambo</h1>
-              <h2 className='text-[#1E1E1E] text-lg font-semibold'>Presidente</h2>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <Image src={ClaraMiranda} className="border-2 border-black" alt=''/>
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <h1 className='bg-[#FF6900] text-[#1E1E1E] p-1 px-4 rounded text-center text-xl font-semibold'>Clara Miranda Vieira</h1>
-              <h2 className='text-[#1E1E1E] text-lg font-semibold'>Vice-Presidente</h2>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center gap-4">
-            <Image src={AnaBeatriz} className="border-2 border-black" alt=''/>
-            <div className="flex flex-col gap-2 items-center justify-center">
-              <h1 className='bg-[#FF6900] text-[#1E1E1E] p-1 px-4 rounded text-center text-xl font-semibold'>Ana Beatriz Barreiro</h1>
-              <h2 className='text-[#1E1E1E] text-lg font-semibold'>Tesoureira</h2>
-            </div>
-          </div>
+        {membros.map((membro, index) => (
+          <CardTeam key={index} image={membro.imagem} nome={membro.nome} cargo={membro.cargo} />
+        ))}
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { Search} from 'lucide-react'
 import Image from 'next/image'
-import HtMicron from "../../../public/htmicron.svg"
-import Sap from "../../../public/sap.svg"
+import HtMicron from "../../../public/empresas-profissional/htmicron.svg"
+import Sap from "../../../public/empresas-profissional/sap.svg"
 import React from 'react'
 import CardCompany from '@/components/CardCompany'
 

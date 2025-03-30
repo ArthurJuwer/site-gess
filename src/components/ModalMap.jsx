@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-import Podium from "../../public/Podium.png";
-import Taberna from "../../public/Taberna.png";
-import Subway from "../../public/Subway.png";
-import Agafarma from "../../public/Agafarma.png";
-import Hss from "../../public/Hss.png";
+import Podium from "../../public/empresas-mapa/Podium.png";
+import Taberna from "../../public/empresas-mapa/Taberna.png";
+import Subway from "../../public/empresas-mapa/Subway.png";
+import Agafarma from "../../public/empresas-mapa/Agafarma.png";
+import Hss from "../../public/empresas-mapa/Hss.png";
 
 export default function ModalMap({ isOpen, onClose, label, category, onSelectLocation }) {
   const [selectedItem, setSelectedItem] = useState(null);
