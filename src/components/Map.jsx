@@ -1,5 +1,6 @@
+"use client";
 import React, { useEffect, useState } from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "leaflet-routing-machine/dist/leaflet-routing-machine.css";
@@ -20,18 +21,25 @@ const Map = ({ latlang }) => {
 
   useEffect(() => {
     const mapInstance = L.map("map", { zoomControl: false }).setView(senacLatLang, 15);
+    
     setMap(mapInstance);
-
+  
     // Adiciona a camada do OpenStreetMap
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(mapInstance);
-
+  
     // Adiciona apenas o ponto de origem (Senac)
     L.marker(senacLatLang, { icon: customIcon })
       .addTo(mapInstance)
       .bindTooltip("Senac São Leopoldo", { permanent: true, direction: "bottom" });
-
+  
+    // Aguarda o Leaflet renderizar os controles antes de removê-los
+    setTimeout(() => {
+      document.querySelector(".leaflet-control-container")?.remove(); // Remove todo o container de controles
+    }, 500); // Pequeno delay para garantir a remoção
+  
     return () => mapInstance.remove(); // Remove o mapa ao desmontar o componente
   }, []);
+
 
   useEffect(() => {
     if (!map) return; // Aguarda até o mapa estar inicializado

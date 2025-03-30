@@ -1,1 +1,4 @@
 @import "tailwindcss";
+.leaflet-control-container {
+    display: none !important;
+  }

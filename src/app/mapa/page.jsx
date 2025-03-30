@@ -1,6 +1,9 @@
 'use client'
 import ButtonMap from '@/components/ButtonMap';
-import Map from '@/components/Map'
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("@/components/Map"), { ssr: false });
+
 import ModalMap from '@/components/ModalMap';
 import { BusFront, Container, Cross, Landmark, Paperclip, Utensils } from 'lucide-react'
 import React, { useState } from 'react'
