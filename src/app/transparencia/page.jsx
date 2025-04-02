@@ -45,7 +45,7 @@ export default function Transparencia() {
                 </tr>
             </thead>
             <tbody>
-                <tr className=" text-xs border-[#D9D9D9]"> { /* border-b */}
+                <tr className=" text-xs">
                     <td className="p-3 border-r border-[#D9D9D9]">15/05/2024</td>
                     <td className="p-3 border-r border-[#D9D9D9]">Saldo Inicial</td>
                     <td className="p-3 border-r border-[#D9D9D9]">
