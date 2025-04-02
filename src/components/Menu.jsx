@@ -29,13 +29,13 @@ export default function Menu() {
 
       {isOpen && (
         <div 
-          className="fixed top-0 left-0 w-full h-full bg-black opacity-45 z-40"
+          className="fixed top-0 left-0 w-full h-full bg-black opacity-45 z-40 overflow-y-auto"
           onClick={toggleMenu}
         />
       )}
 
       <nav 
-        className={`fixed left-0 top-0 w-4/5 xl:w-2/6 p-8 bg-[#FA7B2B] min-h-dvh transition-transform duration-300 z-50 overflow-y-auto
+        className={`fixed left-0 top-0 w-4/5 xl:w-2/6 p-8 bg-[#FA7B2B] h-full transition-transform duration-300 z-50 overflow-y-auto
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex justify-between items-center mb-10">
