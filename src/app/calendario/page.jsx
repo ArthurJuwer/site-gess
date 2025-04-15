@@ -107,13 +107,13 @@ export default function Calendario() {
       </div>
       
         <div className="bg-[#FA7B2B] lg:w-3/5 rounded-4xl text-white p-6 pb-3 flex flex-col gap-3 shadow-xl">
-          <h1 className='text-center text-xl font-semibold'>{passeios.find(passeio => passeio.id === selectedPasseioId)?.titulo}</h1>
+          <h1 className='text-center text-xl font-semibold'>{passeios.find(passeio => passeio.id === selectedPasseioId || passeio.id === 'abril-12')?.titulo}</h1>
           <div className="flex flex-col gap-2">
             <h2 className='font-semibold'>Informações:</h2>
             <div className="flex items-center bg-white p-6 xl:p-10 rounded-2xl gap-10">
             <div className="">
                 <Image 
-                  src={passeios.find(passeio => passeio.id === selectedPasseioId)?.imagem || '/images/default.jpg'} 
+                  src={passeios.find(passeio => passeio.id === selectedPasseioId || passeio.id === 'abril-12')?.imagem } 
                   alt='passeio'
                   width={100}
                   height={100}
@@ -121,14 +121,14 @@ export default function Calendario() {
               </div>
               <div className="">
               <ul className='text-[#FA7B2B] text-sm font-semibold list-disc'>
-                {passeios.find(passeio => passeio.id === selectedPasseioId)?.texto.split('\n').map((linha, index) => (
+                {passeios.find(passeio => passeio.id === selectedPasseioId || passeio.id === 'abril-12')?.texto.split('\n').map((linha, index) => (
                   <li key={index}>{linha.trim()}</li>
                 ))} 
               </ul>
               </div>
             </div>
             <div className="mt-3 flex justify-end">
-              <span className='text-[#FA7B2B] bg-white px-3 py-1 font-semibold text-xl rounded-2xl text-center'>{passeios.find(passeio => passeio.id === selectedPasseioId)?.data} </span>
+              <span className='text-[#FA7B2B] bg-white px-3 py-1 font-semibold text-xl rounded-2xl text-center'>{passeios.find(passeio => passeio.id === selectedPasseioId || passeio.id === 'abril-12')?.data} </span>
             </div>
           </div>
         </div>
