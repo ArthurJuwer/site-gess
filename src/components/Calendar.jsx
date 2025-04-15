@@ -2,7 +2,7 @@ import React from "react";
 import { format, startOfMonth, endOfMonth, addDays, getMonth, getYear } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 
-const Calendar = ({ markedDays = [], selectedMonth }) => {
+const Calendar = ({ markedDays = [], selectedMonth, onDayClick }) => {
   const today = new Date();
 
   // Se a prop 'selectedMonth' for fornecida, usaremos ela, caso contrário, usamos o mês atual
@@ -36,12 +36,15 @@ const Calendar = ({ markedDays = [], selectedMonth }) => {
         {days.map((day, index) => {
           const dayNumber = format(day, "d");
           const isMarked = markedDays.includes(parseInt(dayNumber));
+          const dayId = format(month, "MMMM", { locale: ptBR }) + "-" + (index + 1);
 
           return (
             <div
               key={index}
+              id={dayId}
+              onClick={isMarked ? () => onDayClick?.(dayId) : null}
               className={`py-3 flex items-center justify-center size-9 xl:size-12 xl:text-base mx-auto rounded-full
-                text-black text-sm
+                text-black text-sm 
                 ${isMarked ? "bg-orange-500 text-white" : ""}
               `}
             >
