@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^6.6.0",
     "date-fns": "^4.1.0",
     "leaflet": "^1.9.4",
     "leaflet-routing-machine": "^3.2.12",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "prisma": "^6.6.0",
     "tailwindcss": "^4"
   }
 }
