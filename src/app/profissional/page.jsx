@@ -1,8 +1,9 @@
+'use client'
 import { Search} from 'lucide-react'
 import Image from 'next/image'
 import HtMicron from "../../../public/empresas-profissional/htmicron.svg"
 import Sap from "../../../public/empresas-profissional/sap.svg"
-import React from 'react'
+import React, { useState } from 'react'
 import CardCompany from '@/components/CardCompany'
 
 export default function Profissional() {
@@ -24,6 +25,10 @@ export default function Profissional() {
           imageSrc: Sap,
         }
       ];
+      const [valueSearch, setValueSearch] = useState('')
+      const filteredCompanies = companies.filter(company =>
+        company.name.toLowerCase().includes(valueSearch.toLowerCase())
+      );
   return (
     
     <div className='flex flex-col gap-5 '>
@@ -32,14 +37,20 @@ export default function Profissional() {
                 <h1 className='text-2xl font-bold text-[#1E1E1E]'>Profissional</h1>
                 <p className='text-[#A5A5A5] text-sm'>Acesse os livros que você irá utilizar durante o trimestre</p>
             </div>
-            <div className="p-4  w-full border-2 border-[#FA7B2B] flex justify-between items-center rounded-3xl ">
-                <p className='text-[#A5A5A5] text-sm'>Pesquisar Empresas...</p>
-                <Search />
+            <div className="relative w-full">
+              <input 
+                className="p-4 w-full border-2 border-[#FA7B2B] flex justify-between items-center rounded-3xl outline-0 placeholder:text-[#A5A5A5] text-sm" 
+                placeholder='Pesquisar Empresa...' 
+                value={valueSearch}
+                onChange={(e) => setValueSearch(e.target.value)}
+              />
+                <Search className='absolute transform -translate-y-1/2 top-1/2 right-6'/>
             </div>
+            
         </div>
         <h1 className='w-full text-center bg-[#FE4E03] py-6 text-2xl text-white font-semibold xl:rounded-2xl'>Empresas da Tecnosinos</h1>
         <div className="grid grid-cols-1 gap-5 px-6 xl:px-0 xl:gap-10 xl:grid-cols-2">
-        {companies.map((company) => (
+        {filteredCompanies.map((company) => (
             <CardCompany key={company.id} company={company} />
         ))}
 

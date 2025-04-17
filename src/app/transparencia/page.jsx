@@ -67,7 +67,13 @@ export default function Transparencia() {
             <div className="w-1/2 h-full bg-gray-500"></div>
         </div> */}
     </div>
-        <button className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16 xl:mx-80'>Notas Fiscais e Recibos</button>
+        <a 
+            className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16 xl:mx-80 text-center cursor-pointer'
+            target='_blank'
+            href='https://clammy-cupboard-c83.notion.site/GESS-Portal-de-Transpar-ncia-1d8f87756c0780d7bb21c2cde80e4dad?pvs=4'
+        >
+            Notas Fiscais e Recibos
+        </a>
 
     </div>
   )
