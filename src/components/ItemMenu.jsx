@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function ItemMenu({icone, texto, index, cor}) {
   return (
     <div className={`flex items-center xl:items-start pb-2  ${index === 9 ? 'border-0 xl:border-b-[3px]' : `border-b-[3px]`}`} style={{borderColor: `${cor}`}} >

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import Image from "next/image";
 import LogoGess from "../../public/Logo-Gess.svg";
 import { useState } from "react";
@@ -7,9 +7,9 @@ import ItemMenu from "./ItemMenu";
 import Link from "next/link";
 
 export default function Menu() {
-  const items = useItems()
-  const [isOpen, setIsOpen] = useState(false) 
-  const toggleMenu = () => setIsOpen(!isOpen)
+  const items = useItems(); // Hook para pegar os itens do menu
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <>
@@ -17,7 +17,7 @@ export default function Menu() {
         <Link href={'/'}>
           <Image src={LogoGess} alt="Logo Do GESS" className="w-36 mt-1" />
         </Link>
-        <button 
+        <button
           className={`cursor-pointer flex-col gap-2 relative w-9 h-8 ${isOpen ? 'hidden' : 'flex'}`}
           onClick={toggleMenu}
         >
@@ -54,7 +54,7 @@ export default function Menu() {
             />
           </button>
         </div>
-        
+
         <ul className="flex flex-col gap-10">
           {items.map((item, index) => (
             <Link href={item.href || ''} key={index} onClick={toggleMenu}>
@@ -64,5 +64,5 @@ export default function Menu() {
         </ul>
       </nav>
     </>
-  )
+  );
 }
