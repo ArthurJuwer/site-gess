@@ -2,9 +2,11 @@ import { LinkedinIcon, Facebook, YoutubeIcon, ExternalLink } from "lucide-react"
 import Image from "next/image";
 
 export default function CardCompany ({ company }){
+  console.log(company)
   return (
     <div className="bg-[#EDEBEB] shadow-2xl rounded-3xl p-5 flex flex-col gap-4">
-      <Image src={company.imageSrc} alt={company.name} />
+      {/* <Image src={company.imageSrc} alt="Logo da Empresa" width={200} height={100} /> */}
+
       <span className="h-0.5 w-full block bg-[#A5A5A5] rounded-2xl"></span>
       
       <div className="flex flex-col gap-2">
@@ -13,18 +15,18 @@ export default function CardCompany ({ company }){
           <h3 className="text-xs">{company.website}</h3>
         </div>
         <ul className="flex flex-col gap-1 text-sm">
-          {company.contact.map((info, index) => (
-            <li key={index}>{info}</li>
-          ))}
+        {company?.contact?.map((info, index) => (
+          <li key={index}>{info}</li>
+        ))}
         </ul>
       </div>
       
       <div className="flex gap-2 flex-wrap">
-        {company.tags.map((tag, index) => (
-          <span key={index} className="bg-[#FE4E03] p-2 px-6 text-white rounded-2xl text-xs">
-            {tag}
-          </span>
-        ))}
+      {company?.tags?.map((tag, index) => (
+        <span key={index} className="bg-[#FE4E03] p-2 px-6 text-white rounded-2xl text-xs">
+          {tag}
+        </span>
+      ))}
       </div>
       
       <div className="flex justify-between mt-1">
