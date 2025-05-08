@@ -46,7 +46,7 @@ export default function Transparencia() {
             </thead>
             <tbody>
                 <tr className=" text-xs">
-                    <td className="p-3 border-r border-[#D9D9D9]">15/05/2024</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">12/05/2025</td>
                     <td className="p-3 border-r border-[#D9D9D9]">Saldo Inicial</td>
                     <td className="p-3 border-r border-[#D9D9D9]">
                         <span className="bg-green-600 text-green-900 px-3 py-1 rounded-full text-xs">Entrada</span>

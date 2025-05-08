@@ -8,7 +8,14 @@ import IsadoraDaSilva from "../../../public/equipe/IsadoraDaSilva.svg"
 import EllenVieira from "../../../public/equipe/EllenVieira.svg"
 import ArthurMachado from "../../../public/equipe/ArthurMachado.svg"
 import RaulPontes from "../../../public/equipe/RaulPontes.svg"
+import AnnaLuiza from "../../../public/equipe/AnnaLuiza.png"
+import RafaelaFerrasso from "../../../public/equipe/RafaelaFerrasso.png"
+import MariaLisboa from "../../../public/equipe/MariaLisboa.png"
+
+import Ravas from "../../../public/patrocinadores/ravas.png"
+
 import CardTeam from '@/components/CardTeam';
+import Image from 'next/image';
 
 const membros = [
   {
@@ -56,6 +63,21 @@ const membros = [
     cargo: "Diretor da Saúde",
     imagem: RaulPontes,
   },
+  {
+    nome: "Anna Luiza",
+    cargo: "Diretora Tecnológica",
+    imagem: AnnaLuiza,
+  },
+  {
+    nome: "Rafaela Ferraso",
+    cargo: "Assessora de Marketing",
+    imagem: RafaelaFerrasso,
+  },
+  {
+    nome: "Maria Eduarda Lisboa",
+    cargo: "Assessora Tecnológica",
+    imagem: MariaLisboa,
+  },
 ];
 
 
@@ -71,6 +93,10 @@ export default function Gess() {
         {membros.map((membro, index) => (
           <CardTeam key={index} image={membro.imagem} nome={membro.nome} cargo={membro.cargo} />
         ))}
+        </div>
+        <div className="flex flex-col xl:items-center gap-2 xl:gap-6 mt-12">
+            <h1 className='text-2xl font-bold text-[#1E1E1E] xl:text-center'>Patrocinadores</h1>
+            <Image src={Ravas} alt='' className='size-32' />
         </div>
       </div>
     </div>

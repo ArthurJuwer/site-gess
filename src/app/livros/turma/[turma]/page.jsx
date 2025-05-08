@@ -18,16 +18,21 @@ const livrosPorTurma = {
     // },
   ],
   2: [
-    // {
-    //   titulo: 'Dom Casmurro - Machado de Assis.pdf',
-    //   data: '10/04/2025',
-    //   link: '/pdfs/Dom Casmurro - Machado de Assis.pdf',
-    // },
-    // {
-    //   titulo: 'Memórias Póstumas de Brás Cubas.pdf',
-    //   data: '22/07/2025',
-    //   link: '/pdfs/Memórias Póstumas de Brás Cubas.pdf',
-    // },
+    {
+      titulo: 'Vila Sapo - José Falero.pdf',
+      data: '19/02/2025',
+      link: '/pdfs/2ano/Vila Sapo - José Falero.pdf',
+    },
+    {
+      titulo: 'A Moreninha.pdf',
+      data: '17/04/2025',
+      link: '/pdfs/2ano/A moreninha.pdf',
+    },
+    {
+      titulo: 'Baleia.pdf',
+      data: '08/05/2025',
+      link: '/pdfs/2ano/Baleia.pdf',
+    },
   ],
   3: [
     // {
@@ -52,7 +57,7 @@ export default function Turma() {
       <div className="flex flex-col gap-5 pt-6">
         <div className="flex flex-col gap-2">
           <h1 className='text-2xl font-bold text-[#1E1E1E]'>Livros</h1>
-          <p className='text-[#A5A5A5] text-sm'>Acesse os livros que você irá utilizar durante o trimestre</p>
+          <p className='text-[#A5A5A5] text-sm'>Acesse os livros que você irá utilizar durante o trimestre.</p>
         </div>
 
         <div className="bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg px-8 py-6 h-28 relative">
@@ -64,6 +69,7 @@ export default function Turma() {
         <div className="flex flex-col gap-4">
         {livros ? livros.map((livro, index) => (
           <a
+          key={index}
           href={livro.link}
           download
         >
