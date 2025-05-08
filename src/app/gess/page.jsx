@@ -70,7 +70,7 @@ const membros = [
   },
   {
     nome: "Rafaela Ferraso",
-    cargo: "Assessora de Marketing",
+    cargo: "Assessora de Imprensa",
     imagem: RafaelaFerrasso,
   },
   {

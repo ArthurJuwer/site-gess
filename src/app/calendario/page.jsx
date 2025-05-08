@@ -45,47 +45,43 @@ export default function Calendario() {
 
   const passeios = [
     {
-      id: "abril-12",
-      data: "12/04",
-      imagem: brazilJs,
-      titulo: "Passeio Brazil JS", 
-      texto: `Uniforme obrigatório
-      Lanche Coletivo
-      Valor: R$ 45,00
-      Levar RG
-      Saída: 8:00h`
-    },
-    {
-      id: "abril-20",
-      data: "20/04",
-      imagem: Google,
-      titulo: "Visita Google",
-      texto: `Uniforme opcional
-      Lanche Único
-      Valor: R$ 55,00
-      Levar CNH
-      Saída: 8:30h`
-    },
-    {
-      id: "maio-29",
+      id: "junho-7",
       data: "29/05",
       imagem: CopaGess,
-      titulo: "Copa GESS",
-      texto: `Uniforme do Time
-      Local: Quadra 1 Unisinos
-      Valor: R$ 8,90
-      Levar Ingresso
-      Começo: 19:00h`
-    }
+      titulo: "Entrega de Boletins + Mostra",
+      texto: `Preencher`
+    },
+    {
+      id: "junho-19",
+      data: "29/05",
+      imagem: CopaGess,
+      titulo: "Feriado de Corpus Christi",
+      texto: `Preencher`
+    },
+    {
+      id: "junho-20",
+      data: "29/05",
+      imagem: CopaGess,
+      titulo: "Feriado de Corpus Christi",
+      texto: `Preencher`
+    },
+    {
+      id: "junho-28",
+      data: "29/05",
+      imagem: CopaGess,
+      titulo: "Festa Junina",
+      texto: `Preencher`
+    },
+
   ];
 
-  const handleMonthClick = (month) => {
-    setSelectedMonth(month);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    }); 
-  };
+  // const handleMonthClick = (month) => {
+  //   setSelectedMonth(month);
+  //   window.scrollTo({
+  //     top: 0,
+  //     behavior: 'smooth'
+  //   }); 
+  // };
   const [selectedPasseioId, setSelectedPasseioId] = useState(0);
 
   const handleDayClick = (id) => {
@@ -133,8 +129,8 @@ export default function Calendario() {
           </div>
         </div>
       </div>
-      <h1 className='text-left text-2xl font-bold text-[#1E1E1E]'>Calendário Anual</h1>
-      <div className="grid w-full grid-cols-2 gap-4 p-2 lg:p-0">
+      {/* <h1 className='text-left text-2xl font-bold text-[#1E1E1E]'>Calendário Anual</h1>
+       <div className="grid w-full grid-cols-2 gap-4 p-2 lg:p-0">
         {monthsUntilDecember.map((month, index) => {
           const markedDays = markedDaysForMonths.find(item => item.month === index)?.markedDays || [];
 
@@ -148,7 +144,7 @@ export default function Calendario() {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

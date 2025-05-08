@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import LogoGess from "../../public/Logo-Gess.svg";
+import LogoGess from "../../public/Logo-Gess.webp";
 import { useState } from "react";
 import { useItems } from "@/hooks/useItensMenu";
 import ItemMenu from "./ItemMenu";

@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "Site do GESS",
+  title: "Grêmio Estudantil Senac São Leopoldo",
   description: "Confira o site do Grêmio Estudantil Senac São Leopoldo!",
 };
 

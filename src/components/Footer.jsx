@@ -1,5 +1,5 @@
 import Image from "next/image";
-import LogoGess from "../../public/Logo-Gess.svg";
+import LogoGess from "../../public/Logo-Gess.webp";
 
 export default function Footer() {
   return (
@@ -9,7 +9,6 @@ export default function Footer() {
         <div className="flex text-[#FA7B2B] text-base font-semibold ">
             <h2>Grêmio Estudantil Senac São Leopoldo.</h2>
         </div>
-        
     </div>
   )
 }

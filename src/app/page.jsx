@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CapaGess from "../../public/Capa-Home.svg";
+import CapaGess from "../../public/Capa-Home.webp";
 import ItemMenu from "@/components/ItemMenu";
 import { useItems } from "@/hooks/useItensMenu";
 import Link from "next/link";
