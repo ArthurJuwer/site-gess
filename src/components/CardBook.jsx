@@ -5,11 +5,15 @@ export default function CardBook({ book }) {
   return (
     <Link 
       href={book.link} 
-      className="bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg px-8 py-6 h-28 relative"
+      className="bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg px-8 py-6 h-28 lg:h-[7.5rem] lg:py-8 flex items-center"
     >
-      <span className="text-white font-bold text-6xl absolute left-8">{book.year}</span>
-      <span className="text-white font-bold text-4xl absolute left-17 bottom-11">º</span>
-      <span className="text-white text-lg absolute left-18 bottom-7">ano</span>
+      <div className="flex items-baseline space-x-1">
+        <span className="text-white font-bold text-6xl flex ">
+          {book.year}
+          <span className="text-4xl mt-1">º</span>
+        </span>
+        <span className="text-white -ml-4  text-lg">ano</span>
+      </div>
     </Link>
   )
 }

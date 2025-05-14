@@ -35,7 +35,7 @@ export default function Menu() {
       )}
 
       <nav 
-        className={`fixed left-0 top-0 w-4/5 xl:w-2/6 p-8 bg-[#FA7B2B] h-full transition-transform duration-300 z-50 overflow-y-auto
+        className={`fixed left-0 top-0 w-4/5 xl:w-2/6 p-8 bg-[#FA7B2B] h-full transition-transform duration-300 z-50 overflow-y-auto invisible-scrollbar
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
       >
         <div className="flex justify-between items-center mb-10">

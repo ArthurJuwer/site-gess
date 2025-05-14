@@ -6,14 +6,14 @@ export default function Transparencia() {
     <div className='flex flex-col gap-6 p-6'>
         <div className="flex flex-col gap-2">
             <h1 className='text-2xl font-bold text-[#1E1E1E]'>Portal de Transparência</h1>
-            <p className='text-[#A5A5A5] text-sm'>Todos os valores que o GESS movimentou durante 2025</p>
+            <p className='text-[#A5A5A5] text-sm'>Todos os valores que o GESS movimentou durante 2025.</p>
         </div>
         <div className="w-full flex flex-col gap-5">
             <div className="flex gap-5 xl:gap-6 items-center bg-[#EFEFEF] shadow-xl p-5 xl:p-8 rounded-xl">
                 <Wallet className='text-[#FE4E03] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Valor em Caixa:</h4>
-                    <h2 className='text-[#FE4E03] text-2xl font-bold'>R$100,00</h2>
+                    <h2 className='text-[#FE4E03] text-2xl font-bold'>R$2.800,00</h2>
                 </div>
             </div>
 
@@ -21,7 +21,7 @@ export default function Transparencia() {
                 <TrendingUp className='text-[#126A0D] size-10'/> 
                 <div className="">
                     <h4 className='text-sm'>Total de Entradas:</h4>
-                    <h2 className='text-[#126A0D] text-2xl font-bold'>R$100,00</h2>
+                    <h2 className='text-[#126A0D] text-2xl font-bold'>R$2.800,00</h2>
                 </div>
             </div>
 
@@ -46,26 +46,17 @@ export default function Transparencia() {
             </thead>
             <tbody>
                 <tr className=" text-xs">
-                    <td className="p-3 border-r border-[#D9D9D9]">12/05/2025</td>
+                    <td className="p-3 border-r border-[#D9D9D9]">05/05/2025</td>
                     <td className="p-3 border-r border-[#D9D9D9]">Saldo Inicial</td>
                     <td className="p-3 border-r border-[#D9D9D9]">
                         <span className="bg-green-600 text-green-900 px-3 py-1 rounded-full text-xs">Entrada</span>
                     </td>
-                    <td className="p-2 text-green-700 font-semibold text-xs">R$100,00</td>
+                    <td className="p-2 text-green-700 font-semibold text-xs">R$2.800,00</td>
                 </tr>
-                {/* <tr className='text-xs'>
-                    <td className="p-3 border-r border-[#D9D9D9]">21/06/2024</td>
-                    <td className="p-3 border-r border-[#D9D9D9]">Bolsa Interséries</td>
-                    <td className="p-3 border-r border-[#D9D9D9]">
-                        <span className="bg-red-200 text-red-700 px-3 py-1 rounded-full text-xs">Saída</span>
-                    </td>
-                    <td className="p-2 text-red-600 font-semibold">R$ 75,00</td>
-                </tr> */}
+                
             </tbody>
         </table>
-        {/* <div className="mt-4 h-2 bg-gray-300 rounded-full overflow-hidden">
-            <div className="w-1/2 h-full bg-gray-500"></div>
-        </div> */}
+        
     </div>
         <a 
             className='bg-[#FA7B2B] text-white p-2.5 text-base rounded-full mx-16 xl:mx-80 text-center cursor-pointer'
